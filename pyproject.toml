@@ -1,0 +1,41 @@
+[project]
+name = "app"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.19.1",
+    "asyncpg>=0.31.0",
+    "fastapi[standard]>=0.141.1",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.15.0",
+    "sqlalchemy[asyncio]>=2.0.52",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.3",
+]
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "E4",    # ошибки импортов и отступов
+    "E7",    # ошибки выражений
+    "E9",    # синтаксические ошибки
+    "F",     # неиспользуемые импорты и переменные
+    "I",     # сортировка импортов
+    "B",     # потенциальные ошибки
+    "UP",    # современный синтаксис Python
+    "ASYNC", # ошибки в асинхронном коде
+    "FAST",  # специальные проверки FastAPI
+    "RUF",   # собственные проверки Ruff
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
