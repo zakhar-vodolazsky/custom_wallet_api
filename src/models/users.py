@@ -21,7 +21,10 @@ class User(MappedAsDataclass, Base):
     password_hash: Mapped[str] = mapped_column(String, nullable=False)
     username: Mapped[str] = mapped_column(String, nullable=False, unique=True, init=False)
     created_at: Mapped[datetime] = mapped_column(
-        DateTime, nullable=False, init=False, default_factory=lambda: datetime.now(UTC)
+        DateTime(timezone=True),
+        nullable=False,
+        init=False,
+        default_factory=lambda: datetime.now(UTC),
     )
 
     wallets: Mapped[list[Wallet]] = relationship(back_populates="user", init=False)
