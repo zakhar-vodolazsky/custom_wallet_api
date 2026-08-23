@@ -11,7 +11,7 @@ from src.validators.session_dep import SessionDep
 router = APIRouter(tags=["Users"])
 
 
-@router.post("/users", response_model=UserRead)
+@router.post("/users", response_model=UserRead, status_code=201)
 async def create_user(payload: UserCreate, session: SessionDep) -> User:
     hashed_password = await asyncio.to_thread(hash_password, payload.password)
     user = User(email=payload.email, password_hash=hashed_password)
