@@ -13,9 +13,9 @@ if TYPE_CHECKING:
 
 
 class UserStatus(StrEnum):
-    ACTIVE = "active"
-    DELETED = "deleted"
-    BLOCKED = "blocked"
+    ACTIVE = "ACTIVE"
+    DELETED = "DELETED"
+    BLOCKED = "BLOCKED"
 
 
 class User(MappedAsDataclass, Base):

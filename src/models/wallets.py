@@ -25,15 +25,15 @@ if TYPE_CHECKING:
 
 
 class WalletStatus(StrEnum):
-    ACTIVE = "active"
-    DELETED = "deleted"
-    BLOCKED = "blocked"
+    ACTIVE = "ACTIVE"
+    DELETED = "DELETED"
+    BLOCKED = "BLOCKED"
 
 
 class Wallet(MappedAsDataclass, Base):
     __tablename__ = "wallets"
 
-    __table_args__ = CheckConstraint("balance >= 0", name="ck_wallets_balance_non_negative")
+    __table_args__ = (CheckConstraint("balance >= 0", name="ck_wallets_balance_non_negative"),)
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True, init=False)
 
@@ -41,14 +41,17 @@ class Wallet(MappedAsDataclass, Base):
         BigInteger,
         ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
-        index=True,
+        unique=True,
         init=False,
     )
 
     currency: Mapped[str] = mapped_column(String, nullable=False)
 
     balance: Mapped[decimal.Decimal] = mapped_column(
-        Numeric(scale=2, asdecimal=True), nullable=False, server_default=text("0"), init=False
+        Numeric(precision=20, scale=2, asdecimal=True),
+        nullable=False,
+        server_default=text("0"),
+        init=False,
     )
     public_wallet_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), default_factory=uuid.uuid4, unique=True, nullable=False, init=False

@@ -15,6 +15,6 @@ class UserRead(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     username: str
-    public_id: UUID
+    public_user_id: UUID
     email: EmailStr
     created_at: datetime

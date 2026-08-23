@@ -13,14 +13,14 @@ if TYPE_CHECKING:
 
 
 class TransactionType(StrEnum):
-    DEPOSIT = "deposit"
-    WITHDRAW = "withdraw"
+    DEPOSIT = "DEPOSIT"
+    WITHDRAW = "WITHDRAW"
 
 
 class Transaction(MappedAsDataclass, Base):
     __tablename__ = "transactions"
 
-    __table_args__ = (CheckConstraint("amount <> 0", name="ck_transactions_amount_not_zero"),)
+    __table_args__ = (CheckConstraint("amount > 0", name="ck_transactions_amount_not_zero"),)
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True, init=False)
 
@@ -37,7 +37,7 @@ class Transaction(MappedAsDataclass, Base):
     )
 
     amount: Mapped[decimal.Decimal] = mapped_column(
-        Numeric(scale=2, asdecimal=True),
+        Numeric(precision=20, scale=2, asdecimal=True),
         nullable=False,
     )
     time: Mapped[datetime] = mapped_column(
