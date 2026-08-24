@@ -25,7 +25,7 @@ class User(MappedAsDataclass, Base):
     username: Mapped[str] = mapped_column(String, nullable=False, unique=True, init=False)
     email: Mapped[str] = mapped_column(String, nullable=False, unique=True)
 
-    password_hash: Mapped[str] = mapped_column(String, nullable=False)
+    password_hash: Mapped[str] = mapped_column(String, nullable=False, repr=False)
 
     public_user_id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), nullable=False, unique=True, default_factory=uuid.uuid4, init=False

@@ -1,13 +1,14 @@
 from datetime import datetime
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, ConfigDict
 
+from src.validators.email import Email
 from src.validators.password import Password
 
 
 class UserCreate(BaseModel):
-    email: EmailStr
+    email: Email
     password: Password
 
 
@@ -16,5 +17,5 @@ class UserRead(BaseModel):
 
     username: str
     public_user_id: UUID
-    email: EmailStr
+    email: str
     created_at: datetime
