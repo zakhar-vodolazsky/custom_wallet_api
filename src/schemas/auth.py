@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from src.validators.email import Email
+from schemas.email_adapter import Email
 
 
 class BasicAuth(BaseModel):

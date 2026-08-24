@@ -3,8 +3,8 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
 
-from src.validators.email import Email
-from src.validators.password import Password
+from schemas.email_adapter import Email
+from schemas.password_adapter import Password
 
 
 class UserCreate(BaseModel):
