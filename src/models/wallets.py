@@ -17,11 +17,10 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Mapped, MappedAsDataclass, mapped_column, relationship
 
-from src.models.base import Base
+from src.models import Base
 
 if TYPE_CHECKING:
-    from src.models.transactions import Transaction
-    from src.models.users import User
+    from src.models import Transaction, User
 
 
 class WalletStatus(StrEnum):
@@ -53,7 +52,7 @@ class Wallet(MappedAsDataclass, Base):
         server_default=text("0"),
         init=False,
     )
-    public_wallet_id: Mapped[uuid.UUID] = mapped_column(
+    wallet_uuid: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), default_factory=uuid.uuid4, unique=True, nullable=False, init=False
     )
 

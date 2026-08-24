@@ -3,8 +3,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict
 
-from schemas.email_adapter import Email
-from schemas.password_adapter import Password
+from src.validators import Email, Password
 
 
 class UserCreate(BaseModel):
@@ -17,5 +16,6 @@ class UserRead(BaseModel):
 
     username: str
     public_user_id: UUID
+    wallet_uuid: UUID
     email: str
     created_at: datetime

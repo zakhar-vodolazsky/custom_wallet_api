@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING
 from sqlalchemy import BigInteger, CheckConstraint, DateTime, ForeignKey, Numeric, func
 from sqlalchemy.orm import Mapped, MappedAsDataclass, mapped_column, relationship
 
-from src.models.base import Base
+from src.models import Base
 
 if TYPE_CHECKING:
-    from src.models.wallets import Wallet
+    from src.models import Wallet
 
 
 class TransactionType(StrEnum):
