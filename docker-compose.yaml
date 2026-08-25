@@ -20,6 +20,7 @@ services:
     restart: unless-stopped
 
   migrate:
+    image: alembic:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -33,6 +34,7 @@ services:
     restart: "no"
 
   app:
+    image: fastapi:latest
     build:
       context: .
       dockerfile: Dockerfile
