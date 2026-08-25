@@ -20,8 +20,8 @@ required. Python and PostgreSQL do not need to be installed separately.
 1. Clone the repository and open the project directory:
 
    ```bash
-   git clone <repository-url>
-   cd app
+   git clone https://github.com/zakhar-vodolazsky/custom_wallet_api.git
+   cd custom_wallet_api
    ```
 
 2. Create a local environment file.
@@ -76,3 +76,10 @@ docker compose down
 
 The database is stored in a Docker volume and remains available after the
 containers are stopped normally.
+
+## License
+
+This project is source-available. You may clone and run an unmodified copy
+locally for personal, educational, or evaluation purposes. Modification,
+redistribution, commercial use, and public deployment are prohibited. See the
+[LICENSE](./LICENSE) file for the complete terms.

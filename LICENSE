@@ -1,0 +1,53 @@
+PROPRIETARY SOURCE-AVAILABLE LICENSE
+
+Copyright (c) 2026 Zakhar Vodolazskyi. All rights reserved.
+
+1. Permission
+
+Permission is granted to any person obtaining a copy of this software and its
+associated documentation (the "Software") to:
+
+- download or clone the Software; and
+- run an unmodified copy of the Software locally on devices controlled by that
+  person, solely for personal, educational, or evaluation purposes.
+
+Local configuration files, including `.env` files, may be created or modified
+only as necessary to run the Software.
+
+2. Restrictions
+
+Without prior written permission from the copyright holder, you may not:
+
+- modify, adapt, translate, reverse engineer, or create derivative works based
+  on the Software;
+- distribute, publish, sublicense, sell, rent, transfer, mirror, or otherwise
+  make the Software or any part of it available to another person;
+- use the Software or any part of it for commercial purposes;
+- operate the Software as a publicly accessible service; or
+- remove or alter copyright, license, or attribution notices.
+
+3. Ownership
+
+The Software is licensed, not sold. The copyright holder retains all right,
+title, and interest in and to the Software. No rights are granted except those
+expressly stated in this License.
+
+4. Third-Party Software
+
+This License applies only to the original material in this repository.
+Third-party libraries, tools, and other dependencies remain subject to their
+respective licenses.
+
+5. Termination
+
+Any violation of this License automatically terminates the permission granted
+under it. Upon termination, you must stop using the Software and delete all
+copies in your possession or control.
+
+6. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
