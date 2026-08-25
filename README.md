@@ -68,6 +68,38 @@ Check the container status:
 docker compose ps --all
 ```
 
+## Running tests
+
+The integration tests send requests to the running application at
+`http://127.0.0.1:8000`. Start the application and database in the background
+before running them:
+
+```bash
+docker compose up --build -d
+docker compose ps --all
+```
+
+Wait until the `app` and `db` services are reported as `healthy` and the
+`migrate` service has exited with code `0`.
+
+Running the tests locally requires Python 3.14 and
+[uv](https://docs.astral.sh/uv/). Install the project and development
+dependencies, then run pytest:
+
+```bash
+uv sync --frozen
+uv run pytest
+```
+
+To run only the integration tests for wallets:
+
+```bash
+uv run pytest src/test/test_wallet.py
+```
+
+Keep `APP_PORT=8000` while running the integration tests because their base URL
+currently uses port `8000`.
+
 Stop the application while preserving the PostgreSQL data:
 
 ```bash
