@@ -9,4 +9,3 @@ __pycache__/
 logs/
 .git/
 .pytest_cache/
-src/test/
