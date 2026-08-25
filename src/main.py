@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from src.core.database import engine
 from src.core.logger import configure_logging
 from src.routers.users import router as users_router
+from src.routers.wallets import router as wallets_router
 
 
 @asynccontextmanager
@@ -19,3 +20,9 @@ async def lifespan(_app: FastAPI) -> AsyncIterator[None]:
 configure_logging()
 app = FastAPI(lifespan=lifespan)
 app.include_router(users_router)
+app.include_router(wallets_router)
+
+
+@app.get("/ping", tags=["Health"])
+def ping():
+    return {"status": "ok"}

@@ -14,6 +14,8 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "httpx2>=2.12.0",
+    "pytest>=9.1.1",
     "ruff>=0.16.3",
 ]
 
@@ -40,3 +42,7 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["src/test"]
